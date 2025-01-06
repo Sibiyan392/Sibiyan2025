@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload to Firebase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        input[type="file"] {
+            margin-bottom: 1rem;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .message {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #444;
+        }
+    </style>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCPDGAMod05JfesnYM-juRzycDc7b4gwZk",
+            authDomain: "mytodos-18d2b.firebaseapp.com",
+            projectId: "mytodos-18d2b",
+            storageBucket: "mytodos-18d2b.appspot.com",
+            messagingSenderId: "545938889126",
+            appId: "1:545938889126:web:e3c6a273340a52ad1a1767",
+            measurementId: "G-T4Y6L8D0BG"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const storage = getStorage(app);
+
+        window.uploadFile = async function () {
+            const fileInput = document.getElementById("fileInput");
+            const message = document.getElementById("message");
+            const file = fileInput.files[0];
+            if (!file) {
+                message.textContent = "Please select a file to upload.";
+                message.style.color = "red";
+                return;
+            }
+
+            const storageRef = ref(storage, `uploads/${file.name}`);
+            try {
+                message.textContent = "Uploading...";
+                message.style.color = "blue";
+
+                await uploadBytes(storageRef, file);
+                const downloadURL = await getDownloadURL(storageRef);
+
+                message.textContent = `Upload successful! Download URL: ${downloadURL}`;
+                message.style.color = "green";
+                console.log("Download URL:", downloadURL);
+            } catch (error) {
+                console.error("Error uploading file:", error);
+                message.textContent = "Failed to upload file.";
+                message.style.color = "red";
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload to Firebase</h1>
+        <form onsubmit="event.preventDefault(); uploadFile();">
+            <input type="file" id="fileInput" />
+            <button type="submit">Upload</button>
+        </form>
+        <p id="message" class="message"></p>
+    </div>
+</body>
+</html>

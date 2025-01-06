@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "mytodos-18d2b",
+    "S": "myqms-16582",
+    "staging": "mytodos-18d2b"
+  },
+  "targets": {},
+  "etags": {}
+}

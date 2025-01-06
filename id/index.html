@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Taylor - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #edf2f7, #e2e8f0);
+            color: #2d3748;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #3182ce, #63b3ed);
+            color: white;
+            padding: 60px 20px;
+            border-bottom: 4px solid #ecc94b;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #3182ce;
+            position: relative;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #ecc94b;
+            margin-top: 8px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3182ce;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #63b3ed;
+            text-decoration: underline;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #3182ce;
+            color: white;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #63b3ed;
+        }
+
+        .skills-container, .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skills-category, .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skills-category h3, .project-card h3 {
+            font-size: 1.5rem;
+            color: #3182ce;
+        }
+
+        .skills-category:hover, .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            text-align: center;
+            background: #2c5282;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #ecc94b;
+        }
+
+        footer a:hover {
+            color: #ffdd57;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://cdn-icons-png.flaticon.com/512/706/706830.png" alt="Professional Icon">
+        <h1>Alex Taylor</h1>
+        <p>Software Engineer | Creative Thinker | Problem Solver</p>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am Alex Taylor, a passionate software engineer dedicated to building scalable and innovative applications. I specialize in web and mobile app development, ensuring excellent user experiences and robust backend systems.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>React.js</li>
+                        <li>Flask</li>
+                        <li>SQL & NoSQL Databases</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Critical Thinking</li>
+                        <li>Team Collaboration</li>
+                        <li>Adaptability</li>
+                        <li>Clear Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Weather Insights App</h3>
+                    <p>Developed a Flask-based web app offering real-time weather predictions and agricultural insights.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Interactive Learning App</h3>
+                    <p>Created a mobile app for learning new languages using Android Studio and Firebase.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Task Manager Dashboard</h3>
+                    <p>Built a responsive web dashboard for tracking tasks and team productivity.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p><strong>Email:</strong> <a href="mailto:alextaylor@example.com">alextaylor@example.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+1234567890">+123 456 7890</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Alex Taylor | <a href="#">GitHub</a> | <a href="#">LinkedIn</a></p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nompumelelo Sibiya - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f7ff, #fdf2ff);
+            color: #333;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: white;
+            padding: 60px 20px;
+            border-bottom: 5px solid #f9ca24;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #f9ca24;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #4e54c8;
+            position: relative;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #f9ca24;
+            margin-top: 8px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4e54c8;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #8f94fb;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            background: #4e54c8;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #f9ca24;
+        }
+
+        footer a:hover {
+            color: #ff5733;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #4e54c8;
+            color: white;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #8f94fb;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skills-category {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e8e8e8;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skills-category h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #4e54c8;
+        }
+
+        .skills-category ul li::before {
+            content: "✔ ";
+            color: #8f94fb;
+        }
+
+        .skills-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #f3f8ff, #e7efff);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: #4e54c8;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .github-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .github-link a {
+            font-size: 1.5rem;
+            color: #4e54c8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://cdn-icons-png.flaticon.com/512/706/706830.png" alt="Professional Icon">
+
+        <h1>Nompumelelo Sibiya</h1>
+        <p>Diploma in ICT - Applications Development | Graduating Student (Class of 2024)</p>
+
+        <p>Age: 20 | Gender: Female | Nationality: South African</p>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate and driven ICT professional specializing in Applications Development. With expertise in Python, Firebase, and JavaScript, I excel in creating impactful, user-friendly solutions. I thrive in collaborative environments and am committed to lifelong learning to contribute to technological innovation.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>Firebase</li>
+                        <li>Flask</li>
+                        <li>HTML & CSS</li>
+                        <li>Database Management</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Teamwork</li>
+                        <li>Problem Solving</li>
+                        <li>Adaptability</li>
+                        <li>Communication</li>
+                        <li>Time Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>AI-Driven Weather and Crop Prediction App</h3>
+                    <p>Developed a web app using Python Flask and Firebase, integrating AgroMonitoring API for forecasts and crop recommendations.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Language Learning Application</h3>
+                    <p>Created a mobile app using Android Studio and Jetpack Compose, focusing on user-friendly interfaces and engaging modules.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Lecturer-Student QMS Dashboard</h3>
+                    <p>Designed a dashboard for event management and document uploads, improving workflow for lecturers and program leaders.</p>
+                </div>
+            </div>
+        </section>
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>
+                    Python (Beginner) - Great Learning
+                    <a class="button" href="https://firebasestorage.googleapis.com/v0/b/qmsapp-45972.appspot.com/o/documents%2FPython%20Beginner%20cert.pdf?alt=media" download="Python_Certificate">Download</a>
+                </li>
+                <li>
+                    Database Management - Great Learning
+                    <a class="button" href="https://firebasestorage.googleapis.com/v0/b/qmsapp-45972.appspot.com/o/documents%2FDatabase%20Management%20cert.pdf?alt=media" download="Database_Certificate">Download</a>
+                </li>
+
+                <li>
+                    Academic Transcript
+                    <a class="button" href="https://firebasestorage.googleapis.com/v0/b/mytodos-18d2b.appspot.com/o/uploads%2FMYTRANSCRIPT.pdf?alt=media" download="Academic_Transcript">Download</a>
+                </li>
+            </ul>
+            
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:220451923@ump.ac.za">220451923@ump.ac.za</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+27712165680">+27 712 165 680</a></p>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Nompumelelo Sibiya | <a href="https://github.com/Sibiyan392">GitHub</a> | 
+        <a href="https://www.linkedin.com/in/nompumelelo-sibiya-532455228/">LinkedIn</a></p>
+    </footer>
+</body>
+</html>
